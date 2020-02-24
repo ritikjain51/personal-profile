@@ -15,7 +15,51 @@
 		<meta charset="UTF-8">
 		<!-- Site Title -->
 		<title>Ritik Jain</title>
+<style type="text/css">
+	.output {
+  text-align:center;
+  font-family: 'Source Code Pro', monospace;
+  color:white;
+  h1 {
+    font-size:30px;
+  }
+}
 
+/* Cursor Styling */
+
+.cursor::after {
+  content:'';
+  display:inline-block;
+  margin-left:3px;
+  background-color:white;
+  animation-name:blink;
+  animation-duration:0.5s;
+  animation-iteration-count: infinite;
+}
+h1.cursor::after {
+  height:24px;
+  width:13px;
+}
+p.cursor::after {
+  height:13px;
+  width:6px;
+}
+
+@keyframes blink {
+  0% {
+    opacity:1;
+  }
+  49% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:0;
+  }
+}
+</style>
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 			<!--
 			CSS
@@ -34,8 +78,8 @@
 
 		<body>
 			<header id="header">
-	      <div class="container main-menu">
-	        <div class="row align-items-center justify-content-between d-flex">
+	      		<div class="container main-menu">
+	        	<div class="row align-items-center justify-content-between d-flex">
 	          <div class id="logo">
 	            <a href="/"><h3>Ritik Jain</h3></a>
 	         </div>
@@ -60,13 +104,22 @@
 				<div class="container">
 					<div class="row fullscreen align-items-center justify-content-between">
 						<div class="col-lg-6 col-md-6 col-xs-6 banner-left">
-							<h5>I am</h5>
-
-							<h2 class="mt-10 mb-20">Ritik Jain</h2>
-							<p>
-								Contemplative coder and analyst. Inspired by tough problems.
-							</p>
-
+							<h5 style="color: #3e64ff;">HEY! I AM</h5>
+							<h2 style="font-weight: 900;">Ritik Jain</h2>
+							
+							<h3 class="mt-10 mb-20">I'm a
+							  <span style="color: #3e64ff;" 
+							     class="txt-rotate"
+							     data-period="2000"
+							     data-rotate='[ "Contemplative coder.", "analyst.", "Inspired by tough problems.", "pretty.", "fun!" ]'></span>
+							</h3>
+							
+							<div class="container py-5">
+  <div class="output" id="output">
+    <h1 class="cursor"></h1>
+    <p></p>
+  </div>
+</div>
 							<a href="#portfolio" class="primary-btn text-uppercase mb-20">My Projects</a>
 						</div>
 						<div class="col-lg-6 col-md-6 col-xs-6 banner-right align-self-center">
@@ -524,5 +577,163 @@
 			<script src="js/mail-script.js"></script>
 			<script src="js/scroll.js"></script>
 			<script src="js/main.js"></script>
+			<script type="text/javascript">
+				var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+			</script>
+			<script type="text/javascript">
+				// values to keep track of the number of letters typed, which quote to use. etc. Don't change these values.
+var i = 0,
+    a = 0,
+    isBackspacing = false,
+    isParagraph = false;
+
+// Typerwrite text content. Use a pipe to indicate the start of the second line "|".  
+var textArray = [
+  "HEY! I AM Ritik Jain I'm a analyst.", 
+  "What do you call a fake noodle?|An Impasta", 
+  "Why shouldn't you write with a broken pencil?|Because it's pointless",
+  "Why couldn't the pirate finish the alphabet?|He kept getting lost a C",
+  "What's brown and sticky?|A stick",
+  "What starts with an E, ends with an E and has one letter in it?|An Envelope",
+  "What has four wheels, and flies?|A Garbage truck",
+  "What do you call a pig that knows Karate?|Pork Chop",
+  "Why did the scarecrow get promoted?|He was out standing in his field.",
+  "I have a step ladder|I never knew my real ladder.",
+  "What kind of shoes do ninjas wear?|Sneakers"
+];
+
+// Speed (in milliseconds) of typing.
+var speedForward = 100, //Typing Speed
+    speedWait = 1000, // Wait between typing and backspacing
+    speedBetweenLines = 1000, //Wait between first and second lines
+    speedBackspace = 25; //Backspace Speed
+
+//Run the loop
+typeWriter("output", textArray);
+
+function typeWriter(id, ar) {
+  var element = $("#" + id),
+      aString = ar[a],
+      eHeader = element.children("h1"), //Header element
+      eParagraph = element.children("p"); //Subheader element
+  
+  // Determine if animation should be typing or backspacing
+  if (!isBackspacing) {
+    
+    // If full string hasn't yet been typed out, continue typing
+    if (i < aString.length) {
+      
+      // If character about to be typed is a pipe, switch to second line and continue.
+      if (aString.charAt(i) == "|") {
+        isParagraph = true;
+        eHeader.removeClass("cursor");
+        eParagraph.addClass("cursor");
+        i++;
+        setTimeout(function(){ typeWriter(id, ar); }, speedBetweenLines);
+        
+      // If character isn't a pipe, continue typing.
+      } else {
+        // Type header or subheader depending on whether pipe has been detected
+        if (!isParagraph) {
+          eHeader.text(eHeader.text() + aString.charAt(i));
+        } else {
+          eParagraph.text(eParagraph.text() + aString.charAt(i));
+        }
+        i++;
+        setTimeout(function(){ typeWriter(id, ar); }, speedForward);
+      }
+      
+    // If full string has been typed, switch to backspace mode.
+    } else if (i == aString.length) {
+      
+      isBackspacing = true;
+      setTimeout(function(){ typeWriter(id, ar); }, speedWait);
+      
+    }
+    
+  // If backspacing is enabled
+  } else {
+    
+    // If either the header or the paragraph still has text, continue backspacing
+    if (eHeader.text().length > 0 || eParagraph.text().length > 0) {
+      
+      // If paragraph still has text, continue erasing, otherwise switch to the header.
+      if (eParagraph.text().length > 0) {
+        eParagraph.text(eParagraph.text().substring(0, eParagraph.text().length - 1));
+      } else if (eHeader.text().length > 0) {
+        eParagraph.removeClass("cursor");
+        eHeader.addClass("cursor");
+        eHeader.text(eHeader.text().substring(0, eHeader.text().length - 1));
+      }
+      setTimeout(function(){ typeWriter(id, ar); }, speedBackspace);
+    
+    // If neither head or paragraph still has text, switch to next quote in array and start typing.
+    } else { 
+      
+      isBackspacing = false;
+      i = 0;
+      isParagraph = false;
+      a = (a + 1) % ar.length; //Moves to next position in array, always looping back to 0
+      setTimeout(function(){ typeWriter(id, ar); }, 50);
+      
+    }
+  }
+}
+			</script>
 		</body>
 	</html>

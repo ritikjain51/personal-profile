@@ -53,7 +53,6 @@
 			</script>
 
 
-
 		</head>
 
 		<body>
@@ -61,15 +60,15 @@
 	      <div class="container main-menu">
 	        <div class="row align-items-center justify-content-between d-flex">
 	          <div class id="logo">
-	            <a href="/"><h3>Ritik </h3></a>
+	            <a href="index.html"><h3>Ritik </h3></a>
 	         </div>
 	          <nav id="nav-menu-container">
 	            <ul class="nav-menu">
-	              <li><a href="/">Home</a></li>
+	              <li><a href="index.html">Home</a></li>
 	              <li><a href="about">About</a></li>
 
 
-	              <li><a href="archive">Portfolio</a></li>
+	              <!-- <li><a href="archive">Portfolio</a></li> -->
 
 	              <li><a href="RitikResume.pdf" class="genric-btn primary-border circle" target="_blank">Resume</a></li>
 	              </ul>
@@ -138,11 +137,18 @@
 			    <li>
 			      <div class="content" id = "tile1">
 			      	<script type="text/javascript"> hover_inout("tile1", "detail1");</script>
-			        <h4>
-			          <time>Bachelors in Computer Application</time>
-			        </h4>
-			        <p><b><a href = "https://jecrcuniversity.edu.in/" target="_blank">JECRC University (2014 - 2017)</a></b></p>
-			        <p><b>GPA:</b> 8.78 (On a scale of 10.00)</p><br>
+			      	<div class="row">
+						  <div class = "col-md-3" style="margin: 25px 0px;">
+			      			<img class="img-fluid mx-auto d-block mb-30" src="img/icon1.png" alt="">
+			      		</div>
+			      		<div class = "col-md-9">
+					        <h4>
+					          <time>Bachelors in Computer Application</time>
+					        </h4>
+					        <p><b><a href = "https://jecrcuniversity.edu.in/" target="_blank">JECRC University (2014 - 2017)</a></b></p>
+					        <p><b>GPA:</b> 8.78 (On a scale of 10.00)</p><br>
+					        </div>
+			        	</div>
 			        <div id = "detail1" style = "text-align: center;display: none">
 			        	<p>Studied Software Development, Android Development</p>
 			        </div>
@@ -150,12 +156,18 @@
 			    </li>
 			    <li>
 			      <div class="content", id = "tile2">
-			      	<img class="img-fluid mx-auto d-block mb-30" src="img/about/c-logo.png" alt="">
-			        <h4>
-			          <time>Masters in Computer Application</time>
-			        </h4>
-							<p><b><a href = "https://vit.ac.in/" target="_blank"> VIT University (2017 - 2019)</a></b></p>
-			        <p>November 2017 - March 2018</p><br>
+			      	<div class = "row">
+				      	<div class = "col-md-9">
+				      		<img class="img-fluid mx-auto d-block mb-30" src="img/icon1.png" alt="">
+				      	</div>
+				      	<div class = "col-md-9">
+					        <h4>
+					          <time>Masters in Computer Application</time>	
+					        </h4>
+									<p><b><a href = "https://vit.ac.in/" target="_blank"> VIT University (2017 - 2019)</a></b></p>
+					        <p>November 2017 - March 2018</p><br>
+				        </div>
+				    </div>
 			        <div id = "detail2" style = "text-align: center;display: none;">
 			        	<p>Studied Software Development life cycle, IoT and Big Data</p>
 			        </div>
@@ -165,12 +177,18 @@
 
 			    <li>
 			      <div class="content", id = "tile3">
-			      	<img class="img-fluid mx-auto d-block mb-30" src="img/about/c-logo.png" alt="">
-			        <h4>
-			          <time>Course Mentor</time>
-			        </h4>
-							<p><b><a href = "https://coursera.org" target="_blank"> Coursera </a></b></p>
-			        <p>May 2018 - Present</p><br>
+			      	<div class= "row">
+			      		<div class = "col-md-6">
+				      		<img class="img-fluid mx-auto d-block mb-30" src="img/coach.png" alt="">
+				      	</div>
+				      	<div class = "col-md-9">
+					        <h4>
+					          <time>Course Mentor</time>
+					        </h4>
+									<p><b><a href = "https://coursera.org" target="_blank"> Coursera </a></b></p>
+					        <p>May 2018 - Present</p><br>
+				    	</div>
+			        </div>
 			        <div id = "detail3" style = "text-align: center;display: none;">
 			        	<p>Mentoring for Machine Learning: Regression (University of Washington)</p>
 			        </div>
@@ -180,12 +198,18 @@
 
 			    <li>
 			      <div class="content", id = "tile4">
+			      	<div class = "row">
+			      	<div class = "col-sm-6"><img class="img-fluid mx-auto d-block mb-30" src="img/work.png" alt=""></div>
+
 			      	<script type="text/javascript"> hover_inout("tile4", "detail4");</script>
-			        <h4>
-			          <time>Data Science Intern</time>
-			        </h4>
-			        <p><b><a href = "https://www.tealindia.in/" target="_blank">Terra Economics and Analytical Labs</a></b></p>
-			        <p>Jan 2019 - May 2019</p><br>
+				        <div class = "col-md-6">
+				        <h4>
+				          <time>Data Science Intern</time>
+				        </h4>
+				        <p><b><a href = "https://www.tealindia.in/" target="_blank">Terra Economics and Analytical Labs</a></b></p>
+				        <p>Jan 2019 - May 2019</p><br>
+			        </div>
+			    	</div>
 			        <div id = "detail4" style = "text-align: center;display: none;">
 			        	<p> Web Scrapping, Data Preparation, Infrastructure Design</p>
 			        </div>
@@ -194,12 +218,17 @@
 					<li>
 					 <div class="content" id = "tile5" >
 					 	<script type="text/javascript"> hover_inout("tile5", "detail5");</script>
-						 <h4>
-							 <time>Research Intern</time>
-						 </h4>
-						 <p><b><a href = "http://www.aimlrl.com/" target="_blank">Axis India ML Research Lab</a></b></p>
-						 <p>Jan 2019 - Jul 2019</p>
-
+					 	<div class = "row">
+					 		<div class = "col-md-6">
+			      				<img class="img-fluid mx-auto d-block mb-30" src="img/work.png" alt="">
+			      			</div>
+			      			<div class = "col-md-6">
+								 <h4>
+									 <time>Research Intern</time>
+								 </h4>
+								 <p><b><a href = "http://www.aimlrl.com/" target="_blank">Axis India ML Research Lab</a></b></p>
+								 <p>Jan 2019 - Jul 2019</p>
+							</div>
 						 <div id = "detail5" style = "text-align: left;display: none" >
 						 	<br>
 							<p>Machine Learning, Deep Learning for Tabular Datasets</p>
@@ -209,36 +238,56 @@
 				 <li>
 					 <div class="content" id = "tile6">
 					 	<script type="text/javascript"> hover_inout("tile6", "detail6");</script>
-						 <h4>
-							 <time>Data Science Intern</time>
-						 </h4>
-						 <p><b><a href = "https://www.nabler.com/" target="_blank"> Nabler Web Solutions </a></b></p>
-						 <p>Aug 2019 - Oct 2019</p><br>
-						 <div id = "detail6" style = "text-align: center;display: none">
-						 	<p>Attribution Modelling, Graph Theory, NLP based Recommendation system for Digital Marketing</p>
-						 </div>
+					 	<div class = "row">
+					 		<div class = "col-md-3">
+				      			<img class="img-fluid mx-auto d-block mb-30" src="img/work.png" alt="">
+				      		</div>
+					      	<div class = "col-lg-8">
+							 <h4>
+								 <time>Data Science Intern</time>
+							 </h4>
+							 <p><b><a href = "https://www.nabler.com/" target="_blank"> Nabler Web Solutions </a></b></p>
+							 <p>Aug 2019 - Oct 2019</p><br>
+							</div>
+							<div id = "detail6" style = "text-align: center;display: none">
+							 	<p>Attribution Modelling, Graph Theory, NLP based Recommendation system for Digital Marketing</p>
+							</div>
 					 </div>
 				 </li>
 				 <li>
 					 <div class="content" id = "tile7">
 					 	<script type="text/javascript"> hover_inout("tile7", "detail7");</script>
-						 <h4>
-							 <time>Freelancer Data Scientist</time>
-						 </h4>
-						 <p>Nov 2019 - Present</p>
-						 <div id = "detail7" style = "text-align: center;display: none">
-						 	<p>AWS Deployment, Machine Learning modelling, NLP based problems</p>
-						 </div>
+					 	<div class = "row">
+					 		<div class = "col-md-3">
+						 	<img class="img-fluid mx-auto d-block mb-30" src="img/work.png" alt="">
+						 	</div>
+						 	<div class = "col-md-9">
+								 <h4>
+									 <time>Freelancer Data Scientist</time>
+								 </h4>
+								 <p>Nov 2019 - Present</p>
+							</div>
+							 <div id = "detail7" style = "text-align: center;display: none">
+							 	<p>AWS Deployment, Machine Learning modelling, NLP based problems</p>
+							 </div>
+						</div>
 					 </div>
 				 </li>
 				 <li>
 					 <div class="content" id = "tile8">
 					 	<script type="text/javascript"> hover_inout("tile8", "detail8");</script>
-						 <h4>
-							 <time>Data Scientist</time>
-						 </h4>
-						 <p><b><a href = "https://www.pichainlabs.com/" target="_blank"> Pichain Innovation Labs </a></b></p>
-						 <p>Jan 2020 - Present</p><br>
+					 	<div class = "row">
+					 		<div class = "col-md-6">
+						 		<img class="img-fluid mx-auto d-block mb-30" src="img/work.png" alt="">
+							</div>
+							<div class = "col-md-6">
+								 <h4>
+									 <time>Data Scientist</time>
+								 </h4>
+								 <p><b><a href = "https://www.pichainlabs.com/" target="_blank"> Pichain Innovation Labs </a></b></p>
+								 <p>Jan 2020 - Present</p><br>
+							</div>
+						 </div>
 						 <div id = "detail8" style = "text-align: center;display: none">
 						 	<p>Cloud Based ML Pipelines, Machine Learning, Deep Learning, Doker, NLP, Graph Theory, Set theory</p>
 						 </div>
@@ -282,8 +331,6 @@
 										</dd>
 
 									</div>
-								</div>
-							</div>
 						</section>
 
 </div>
@@ -293,31 +340,26 @@
 						<footer class="footer-area section-gap">
 								<div class="container">
 										<div class="row">
-												<div class="col-lg-5 col-md-6 col-sm-6">
-														<div class="single-footer-widget">
-																<h4>About This Page</h4>
-																<p class="footer-text">
-																		This website was coded in HTML, CSS, and Javascript based on a theme from Colorlib. It is hosted on AWS Lambda. 
-																</p>
-																<p class="footer-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-														</div>
-												</div>
-
-												<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+													<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
 														<div class="single-footer-widget">
 																<h4>Connect with Me</h4>
 																<p>Let's be social. </p>
 																<div class="footer-social d-flex align-items-center">
-																		<!-- <a href="https://medium.com/@harrisonjansma"><i class="fa fa-medium"></i></a> -->
 																		<a href="http://www.linkedin.com/in/ritikjain51" target="_blank"><i class="fa fa-linkedin"></i></a>
 																		<a href="https://github.com/ritikjain51" target="_blank"><i class="fa fa-github"></i></a>
 																		<a href = "https://www.medium.com/@ritikjain51" target="_blank"><i class = "fa fa-medium"></i></a>
 
 																</div>
 														</div>
-												</div>
+
+													</div>
+
+													<div  class="col-lg-5 col-md-9 col-sm-6">
+														<div class="mapouter">
+															<div class="gmap_canvas">
+																<iframe width="500" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=Bengalore&t=&z=12&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+																</div><style>.mapouter{position:relative;text-align:right;height:500px;width:715px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:715px;}</style></div>
+														</div>
 										</div>
 								</div>
 						</footer>
@@ -326,8 +368,7 @@
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="js/popper.min.js"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>	
   			<script src="js/easing.min.js"></script>
 			<script src="js/hoverIntent.js"></script>
 			<script src="js/superfish.min.js"></script>
